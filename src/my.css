@@ -1,4 +1,6 @@
-
+.container-fluid .p-5 {
+    width: fit-content;
+}
 
 .button_bar {
     padding-top: 10px;
