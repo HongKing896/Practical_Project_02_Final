@@ -14,36 +14,35 @@
     </div>
       <div class="container mt-5">
         <div class="row">
-          <div class="col-sm-4">
-            <div class="card">
+          <div class="col-sm-3">
+            <div class="card" onclick="cardClicked()">
                 <div class="card-body">
                     <h4 class="card-title">실전 프로젝트</h4>
                     <p class="card-text">NTH 313</p>
-                    <a href="view.html" class="btn btn-primary">보기</a>
-                    <button type="button" class="btn btn-secondary text-white text-center" onclick="updateButtonClicked()" >수정</button>
-                    <button type="button" class="btn btn-secondary text-white text-center" onclick= "deleteButtonClicked()" >삭제</button>
                 </div>
               </div>
           </div>
-          <div class="col-sm-4">
-            <div class="card">
+          <div class="col-sm-3">
+            <div class="card" onclick="cardClicked()">
                 <div class="card-body">
                   <h4 class="card-title">통계학</h4>
                   <p class="card-text">NMH 410A</p>
-                  <a href="view.html" class="btn btn-primary">보기</a>
-                  <button type="button" class="btn btn-secondary text-white text-center" onclick="updateButtonClicked()" >수정</button>
-                  <button type="button" class="btn btn-secondary text-white text-center" onclick= "deleteButtonClicked()" >삭제</button>
                 </div>
               </div>
           </div>
-          <div class="col-sm-4">
-            <div class="card">
+          <div class="col-sm-3">
+            <div class="card" onclick="cardClicked()">
                 <div class="card-body">
                   <h4 class="card-title">Computer Vision</h4>
                   <p class="card-text">ANH 313</p>
-                  <a href="view.html" class="btn btn-primary">보기</a>
-                  <button type="button" class="btn btn-secondary text-white text-center" onclick="updateButtonClicked()" >수정</button>
-                  <button type="button" class="btn btn-secondary text-white text-center" onclick= "deleteButtonClicked()" >삭제</button>
+                </div>
+              </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="card" onclick="cardClicked()">
+                <div class="card-body">
+                  <h4 class="card-title">선형 대수학</h4>
+                  <p class="card-text">OH 402</p>
                 </div>
               </div>
           </div>
@@ -55,15 +54,8 @@
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 <script>
-    function deleteButtonClicked (){
-        alert("삭제되었습니다.");
-    }
-
-    function updateButtonClicked(){
-        location.href = "edit.html";
-    }
-    function addButtonClicked(){
-        location.href = "add.html";
+    function cardClicked(){
+        location.href = "view.html";
     }
 </script>
 </html>

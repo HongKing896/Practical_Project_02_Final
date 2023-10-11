@@ -1,5 +1,10 @@
+html, body {
+    height: 100%;
+}
+
 .viewcontainer{
     width: fit-content;
+
 }
 
 .button_bar {
@@ -8,6 +13,22 @@
 }
 
 .view-btn-bar{
-    padding-bottom: 10px;
+    padding-top: 10px;
     padding-left: 280px;
+}
+
+.form-signin {
+    max-width: 330px;
+    padding: 1rem;
+}
+
+.card:hover{
+    background-color:beige;
+}
+
+@media only screen and (max-width: 600px){
+    .view-btn-bar{
+        padding-top: 10px;
+        padding-left: 30%;
+    }
 }

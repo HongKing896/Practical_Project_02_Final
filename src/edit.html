@@ -4,30 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <title>edit</title>
     <link href="my.css" rel="stylesheet">
+    <title>edit</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
 </head>
-<body>
-    <div class="container-fluid p-5 viewcontainer">
-        <div class="p-5 bg-primary text-white ">
-            <h1 class="text-center">실전 프로젝트</h1>
-        </div>
-        <div class="bg-primary-subtle position-relative">
-            <p class="text-center ">분반: 01분반</p>
-            <p class="text-center">과목코드:  ECE20008</p>
-            <p class="text-center">분류: 전공 필수</p>
-            <p class="text-center">담당교수: 김광 교수님</p>
-            <div class="view-btn-bar">
-                <button type="button" class="btn btn-secondary text-white text-center" onclick= "checkButtonClicked()" >확인</button>
+<body class="d-flex align-items-center py-4 border-5">
+    <main class="form-signin w-100 m-auto bg-primary">
+        <form name="courseForm" onsubmit="return validateForm();">
+            <div class="form-floating">
+                <input type="text" name="courseName" class="form-control" id="floatingInput" placeholder="***" value="실전 프로젝트">
+                <label for="floatingInput">과목명</label>
             </div>
-        </div>
-    </div>
+            <div class="form-floating">
+                <input type="text" name="courseCode" class="form-control" id="floatingInput" placeholder="***" value="ECE20008">
+                <label for="floatingInput">과목코드</label>
+            </div>
+            <div class="form-floating">
+                <input type="text" name="professor" class="form-control" id="floatingPassword" placeholder="***" value="김광 교수님">
+                <label for="floatingPassword">담당 교수</label>
+            </div>
+            <div class="form-check text-start my-3">
+                <input type="radio" value="chooseMajor" name="courseType" id="flexCheckDefault">
+                <label for="flexCheckDefault" class="bg-light border" >
+                전선
+                </label>
+                <input type="radio" value="mustMajor" name="courseType" id="flexCheckDefault" checked="checked">
+                <label for="flexCheckDefault" class="bg-light border" >
+                전필
+                </label>
+                <input type="radio" value="mustChooseMajor" name="courseType" iid="flexCheckDefault">
+                <label for="flexCheckDefault" class="bg-light border" >
+                전선필
+                </label>
+                <br>
+                <input type="radio" value="chooseCulture" name="courseType" iid="flexCheckDefault">
+                <label for="flexCheckDefault" class="bg-light border" >
+                교선
+                </label>
+                <input type="radio" value="mustCulture" name="courseType" iid="flexCheckDefault">
+                <label for="flexCheckDefault" class="bg-light border" >
+                교필
+                </label>
+                <input type="radio" value="mustChooseCulture" name="courseType" iid="flexCheckDefault">
+                <label for="flexCheckDefault" class="bg-light border" >
+                교선필
+                </label>
+            </div>
+            <label for="courseClass" class="form-label bg-light">분반:</label>
+            <select class="form-select" id="courseClass" name="courseClass">
+                <option selected>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+            </select><br>
+            <button class="btn btn-light" type="submit">추가</button>
+        </form>
+    </main>
 </body>
 <script>
-    function checkButtonClicked(){
-        location.href = "index.html";
+    function validateForm(){
+        var courseName = document.courseForm.courseName;
+        if(courseName.value.length < 3){
+            alert("과목명을 올바르게 입력하세요.");
+            courseName.focus();
+            return false;
+        }
+
+        var courseCode = document.courseForm.courseCode;
+        if(courseCode.value.length != 8){
+            alert("과목 코드를 올바르게 입력하세요.");
+            courseCode.focus();
+            return false;
+        }
+
+        var professor = document.courseForm.professor;
+        if(professor.value.length < 2){
+            alert("담당 교수님을 올바르게 입력하세요.");
+            professor.focus();
+            return false;
+        }
+
+        var courseType = document.courseForm.courseType;
+        var isChecked = false;
+        for (var i = 0; i < courseType.length; i++) {
+            if (courseType[i].checked) {
+                isChecked = true;
+                break;
+            }
+        }
+        if (!isChecked) {
+            alert("전공 구분을 선택하세요.");
+            return false;
+        }
+
+        var courseClass = document.courseForm.courseClass;
+        if (courseClass.value == "") {
+            alert("분반을 선택하세요.");
+            courseClass.focus();
+            return false;
+        }
+
+        if(confirm("해당 내용으로 수정할까요?"))
+            alert("수정되었습니다.");
+
+        window.location.href = "view.html";
+        return false;
     }
 </script>
 </html>
