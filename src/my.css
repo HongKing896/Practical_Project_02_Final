@@ -1,8 +1,13 @@
-.container-fluid .p-5 {
+.viewcontainer{
     width: fit-content;
 }
 
 .button_bar {
     padding-top: 10px;
     padding-left: 80%;
+}
+
+.view-btn-bar{
+    padding-bottom: 10px;
+    padding-left: 280px;
 }
