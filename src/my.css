@@ -26,6 +26,10 @@ html, body {
     background-color:beige;
 }
 
+.backBtn{
+    float: left;
+}
+
 @media only screen and (max-width: 600px){
     .view-btn-bar{
         padding-top: 10px;

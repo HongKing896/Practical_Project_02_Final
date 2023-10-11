@@ -15,15 +15,15 @@
             <div class="form-floating">
                 <input type="text" name="courseName" class="form-control" id="floatingInput" placeholder="***">
                 <label for="floatingInput">과목명</label>
-            </div>
+            </div><br>
             <div class="form-floating">
                 <input type="text" name="courseCode" class="form-control" id="floatingInput" placeholder="***">
                 <label for="floatingInput">과목코드</label>
-            </div>
+            </div><br>
             <div class="form-floating">
                 <input type="text" name="professor" class="form-control" id="floatingPassword" placeholder="***">
                 <label for="floatingPassword">담당 교수</label>
-            </div>
+            </div><br>
             <div class="form-check text-start my-3">
                 <input type="radio" value="chooseMajor" name="courseType" id="flexCheckDefault">
                 <label for="flexCheckDefault" class="bg-light border" >
@@ -58,11 +58,17 @@
                 <option>3</option>
                 <option>4</option>
             </select><br>
-            <button class="btn btn-light" type="submit">추가</button>
+            <div class="row">
+                <button class="col btn btn-light" type="submit">추가</button>
+                <button type="button" class="col btn btn-secondary text-white text-center backBtn" onclick= "backButtonClicked()" >뒤로</button>
+            </div>
         </form>
     </main>
 </body>
 <script>
+    function backButtonClicked(){
+        location.href = "index.html";
+    }
     function validateForm(){
         var courseName = document.courseForm.courseName;
         if(courseName.value.length < 3){
